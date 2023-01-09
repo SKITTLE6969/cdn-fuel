@@ -1,28 +1,28 @@
 Config = {}
 Config.FuelDebug = false -- Used for debugging, although there are not many areas in yet (Default: false) + Enables Setfuel Commands (0, 50, 100). 
-Config.ShowNearestGasStationOnly = true -- When enabled, only the nearest gas stations will be shown on the map.
+Config.ShowNearestGasStationOnly = true -- When true, only the nearest gas stations will be shown on the map. | When false, all gas stations will be shown on the map.
 Config.LeaveEngineRunning = true -- When true, the vehicle's engine will be left running upon exit if the player *HOLDS* F.
-Config.VehicleBlowUp = false -- When true, there will be a configurable chance of the vehicle blowing up, if you fuel while the engine is on.
+Config.VehicleBlowUp = true -- When true, there will be a configurable chance of the vehicle blowing up, if you fuel while the engine is on.
 Config.BlowUpChance = 5 -- Percentage for Chance of Engine Explosion (Default: 5% or 5) 
 Config.CostMultiplier = 3.0 -- Amount to multiply 1 by. This indicates fuel price. (Default: $3.0/l or 3.0)
-Config.GlobalTax = 15.0 -- The tax, in %, that people will be charged at the pump. (Default: 15% or 15.0)
-Config.FuelNozzleExplosion = false -- When true, it enables the fuel pump exploding when players run away with the nozzle. Highly recommeded to be false.
+Config.GlobalTax = 10.0 -- The tax, in %, that people will be charged at the pump. (Default: 15% or 15.0)
+Config.FuelNozzleExplosion = true -- When true, it enables the fuel pump exploding when players run away with the nozzle. Highly recommeded to be false.
 Config.FuelDecor = "_FUEL_LEVEL" -- Do not touch! (Default: "_FUEL_LEVEL")
 Config.RefuelTime = 600 -- Highly recommended to leave at 600. This value will be multiplied times the amount the player is fueling for the progress bar and cancellation logic! DON'T GO BELOW 250, performance WILL drop!
 Config.FuelTargetExport = false -- This is only used to fix this issue: https://github.com/CodineDev/cdn-fuel/issues/3. <br> <br> If you don't have this issue and haven't installed this exports in qb-target, then this should be false. Otherwise there will be an error.
 
 -- Syphoning --
-Config.UseSyphoning = false -- Follow the Syphoning Install Guide to enable this option!
-Config.SyphonDebug = false -- Used for Debugging the syphon portion!
+Config.UseSyphoning = true -- Follow the Syphoning Install Guide to enable this option!
+Config.SyphonDebug = false  -- Used for Debugging the syphon portion!
 Config.SyphonFuelDecor = Config.FuelDecor -- Do not touch! (Default: "_FUEL_LEVEL")
 Config.SyphonKitCap = 50 -- Maximum amount (in L) the syphon kit can fit!
 Config.SyphonPoliceCallChance = 25 -- Math.Random(1, 100) Default: 25% 
 Config.SyphonDispatchSystem = "qb-default" -- Options: "ps-dispatch", "qb-dispatch", "qb-default" (just blips) or "custom" (Custom: you must configure yourself!)
 
 --- Jerry Can ----- 
-Config.UseJerryCan = false -- Enable the Jerry Can functionality. Will only work if properly installed.
+Config.UseJerryCan = true -- Enable the Jerry Can functionality. Will only work if properly installed.
 Config.JerryCanCap = 50 -- Maximum amount (in L) the jerrycan can fit! (Default: 50L)
-Config.JerryCanPrice = 750 -- The price of a jerry can, not including tax. 
+Config.JerryCanPrice = 250 -- The price of a jerry can, not including tax. 
 Config.JerryCanGas = 0 -- The amount of Gas that the Jerry Can you purchase comes with. This should not be bigger that your Config.JerryCanCap!
 
 -- Animations --
@@ -36,25 +36,25 @@ Config.RefuelAnimationDictionary = "timetable@gardener@filling_can" -- This is f
 
 --- Player Owned Gas (Gasoline) Ergonomic Refueling Stations (Poggers) ---
 Config.PlayerOwnedGasStationsEnabled = true -- When true, peds will be located at all gas stations, and players will be able to talk with peds & purchase gas stations, having to manage fuel supplies.
-Config.StationFuelSalePercentage = 0.65 -- % of sales that the station gets. If they sell 4 Liters of Gas for $16 (not including taxes), they will get 16*Config.StationFuelSalePercentage back from the sale. Treat this as tax, also, it balances the profit margins a bit.
+Config.StationFuelSalePercentage = 0.25 -- % of sales that the station gets. If they sell 4 Liters of Gas for $16 (not including taxes), they will get 16*Config.StationFuelSalePercentage back from the sale. Treat this as tax, also, it balances the profit margins a bit.
 Config.EmergencyShutOff = false -- When true, players can walk up to the ped and shut off the pumps at a gas station. While false, this option is disabled, because it can obviously be an issue. 
 Config.UnlimitedFuel = false -- When true, the fuel stations will not require refuelling by gas station owners, this is for the early stages of implementation.
-Config.MaxFuelReserves = 100000 -- This is the maximum amount that the fuel station's reserves can hold.
+Config.MaxFuelReserves = 5000 -- This is the maximum amount that the fuel station's reserves can hold.
 Config.FuelReservesPrice = 2.0 -- This is the price of fuel reserves for gas station owners.
-Config.GasStationSellPercentage = 50 -- This is the percentage that players will get of the gas stations price, when they sell a location!
-Config.MinimumFuelPrice = 3 -- This is the minimum value you want to let players set their fuel prices to.
-Config.MaxFuelPrice = 10 -- This is the maximum value you want to let players set their fuel prices to.
+Config.GasStationSellPercentage = 25 -- This is the percentage that players will get of the gas stations price, when they sell a location!
+Config.MinimumFuelPrice = 10 -- This is the minimum value you want to let players set their fuel prices to.
+Config.MaxFuelPrice = 30 -- This is the maximum value you want to let players set their fuel prices to.
 Config.PlayerControlledFuelPrices = true -- This gives you the option to disable people being able to control fuel prices. When true, players can control the fuel prices via to management menu for the location.
 Config.GasStationNameChanges = true -- This gives you the option to disable people being able to change the name of their gas station, only recommended if it becomes a problem.
 Config.NameChangeMinChar = 10 -- This is the minimum length that a Gas Station's name must be.
 Config.NameChangeMaxChar = 25 -- This is the maximum length that a Gas Station's name must be.
 
 -- Phone --
-Config.RenewedPhonePayment = false -- When true, payments will be sent to the players phone with a notification, giving them the opportunity to accept or decline payment. If the cancel after paying for fuel, money will be returned. 
+Config.RenewedPhonePayment = true -- When true, payments will be sent to the players phone with a notification, giving them the opportunity to accept or decline payment. If the cancel after paying for fuel, money will be returned. 
 
 --- Electric Vehicles
 Config.ElectricVehicleCharging = true -- When true, electric vehicles will actually consume resources and decrease 'Fuel / Battery' while driving. This means players will have to recharge their vehicle!
-Config.ElectricChargingPrice = 4 -- Per "KW". This value is multiplied times the amount of electricity someone put into their vehicle, to constitute the final cost of the charge. Players whom own the gas station will not recieve the money from electric charging.
+Config.ElectricChargingPrice = 400 -- Per "KW". This value is multiplied times the amount of electricity someone put into their vehicle, to constitute the final cost of the charge. Players whom own the gas station will not recieve the money from electric charging.
 Config.ElectricVehicles = { -- The list of Electric Vehicles in the base game. You can add more if needed, use the Vehicle's Spawn Name
     "surge",
     "iwagen",
@@ -135,7 +135,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 28.2,
         maxz = 30.3,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = 167.06, 
@@ -158,7 +158,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 28.2,
         maxz = 30.4,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = -40.94, 
@@ -180,7 +180,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 17.4,
         maxz = 21.04,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = -531.2, 
@@ -203,7 +203,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 18.0,
         maxz = 20.4,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = -705.66, 
@@ -225,7 +225,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 28.1,
         maxz = 30.3,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = 288.83, 
@@ -248,7 +248,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 25.1,
         maxz = 28.1,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = 816.42, 
@@ -272,7 +272,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 34.1,
         maxz = 36.3,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = 1211.13, 
@@ -295,7 +295,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 68.1,
         maxz = 70.2,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = 1163.64, 
@@ -319,7 +319,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 101.9,
         maxz = 104.8,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = 642.08, 
@@ -341,7 +341,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 45.0,
         maxz = 47.3,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = -1428.4, 
@@ -365,7 +365,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 12.0,
         maxz = 14.3,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = -2074.28, 
@@ -387,7 +387,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 30.34,
         maxz = 32.5,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = -93.02, 
@@ -412,7 +412,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 30.7,
         maxz = 32.91,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = 170.44, 
@@ -434,7 +434,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 31.4,
         maxz = 34.2,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = 1698.62, 
@@ -457,7 +457,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 41.05,
         maxz = 43.17,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false, 
         pedcoords = {
             x = 1704.59, 
@@ -479,7 +479,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 31.18,
         maxz = 33.60, 
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false, 
         pedcoords = {
             x = 2001.33, 
@@ -493,15 +493,15 @@ Config.GasStations = { -- Configuration options for various gas station related 
     },
     [17] = {
         zones = {
-            vector2(1774.24, 3308.71),
-            vector2(1752.65, 3345.83),
-            vector2(1784.47, 3357.95),
-            vector2(1808.71, 3321.21)
+            vector2(1768.56, 3328.41),
+            vector2(1780.68, 3335.98),
+            vector2(1789.02, 3319.32),
+            vector2(1776.52, 3314.39)
         },
-        minz = 39.0,
-        maxz = 44.6,
+        minz = 40.0,
+        maxz = 42.6,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = 1776.57, 
@@ -523,7 +523,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 54.24,
         maxz = 56.4,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false, 
         pedcoords = {
             x = 2673.98, 
@@ -547,7 +547,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 36.7,
         maxz = 38.85,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = 1201.68, 
@@ -569,7 +569,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 38.24,
         maxz = 40.55,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = 1039.44, 
@@ -592,7 +592,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 43.60,
         maxz = 45.95,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = 265.89, 
@@ -614,7 +614,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 56.8,
         maxz = 58.9,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = 46.53, 
@@ -637,7 +637,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 32.05,
         maxz = 34.08,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = -2544.04,
@@ -660,7 +660,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 36.94,
         maxz = 38.94,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = 2545.02, 
@@ -683,7 +683,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 107.4,
         maxz = 109.4,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = 2559.36,
@@ -705,7 +705,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 136.64,
         maxz = 139.9,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = -1825.33,
@@ -727,7 +727,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         minz = 29.5,
         maxz = 31.9,
         pedmodel = "a_m_m_indian_01",
-        cost = 100000,
+        cost = 100000000,
         shutoff = false,
         pedcoords = {
             x = -342.37,
@@ -739,32 +739,8 @@ Config.GasStations = { -- Configuration options for various gas station related 
         electricchargercoords = vector4(-341.63, -1459.39, 29.76, 271.73),
         label = "Alta Street Globe Oil",
     },
-    -- [28] = { -- Gabz Ottos Autos Location, Line In If Needed.
-    --     zones = {
-    --         vector2(794.27795410156, -802.88677978516),
-    --         vector2(794.19073486328, -784.70434570313),
-    --         vector2(834.78155517578, -784.63250732422),
-    --         vector2(843.86151123047, -801.45819091797),
-    --         vector2(823.64239501953, -801.69488525391),
-    --         vector2(811.66571044922, -803.15899658203)
-    --     },
-    --     minz = 26.0,
-    --     maxz = 27.0,
-    --     pedmodel = "a_m_m_indian_01",
-    --     cost = 100000,
-    --     shutoff = false,
-    --     pedcoords = {
-    --         x = 819.1,
-    --         y = -774.63,
-    --         z = 25.23,
-    --         h = 83.86,
-    --     },
-    --     electriccharger = nil,
-    --     electricchargercoords = vector4(837.7554, -793.623, 25.23, 105.22),
-    --     label = "Ottos Autos Globe Oil",
-    -- },
     -- Example of a New Location
-    -- [29] = {
+    -- [28] = {
     --     zones = {
     --          https://skyrossm.github.io/PolyZoneCreator/ 
     --          Use this for a quick way to add a Gas Station, instead of doing it in game, make sure you included the entire area, including the ped and electric pumps if used.       
@@ -772,7 +748,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
     --     minz = 0,
     --     maxz = 800.0,
     --     pedmodel = "a_m_m_indian_01", -- This is the model of the ped that will be created for the management menu @ the gas station.
-    --     cost = 100000, -- This is the cost of the gas station for someone purchasing it, not including tax.
+    --     cost = 100000000, -- This is the cost of the gas station for someone purchasing it, not including tax.
     --     shutoff = false, -- Leave as false, this is for when someone turns off the pumps. 
     --     pedcoords = { -- Vector4, X, Y, Z & Heading.
     --         x = -342.37,
